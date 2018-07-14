@@ -1,15 +1,13 @@
 {% set name = "osmnet" %}
-{% set version = "0.1.4" %}
-{% set sha256 = "344452f42d63ba838bf4382cb7f641a18e95312c2c4c0bba327ec1afc036cca8" %}
+{% set version = "0.1.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/UDST/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 1e6234a82ff6a672d0aeb3d8b7b684905808bfbf9087876d1b8d3d897c127c80
 
 build:
   noarch: python

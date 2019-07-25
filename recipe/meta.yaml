@@ -1,15 +1,17 @@
+{% set name = "osmnet" %}
 {% set version = "0.1.5" %}
+{% set sha256 = "2fb96a7a95e34af45d1b8c5f88705da6876143820781220b1f55adf1f242639e" %}
 
 package:
-  name: osmnet
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/UDST/osmnet/archive/v{{ version }}.tar.gz
-  sha256: 335a69e4976930e18199a15f4b47cf5fa1b85b3c4aae7c5c0492a3f0b1fe66fb
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: python -m pip install --no-deps --ignore-installed .
 
@@ -44,4 +46,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - pksohn
+    - smmaurer

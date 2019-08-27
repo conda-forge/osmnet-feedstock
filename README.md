@@ -120,4 +120,5 @@ Feedstock Maintainers
 =====================
 
 * [@pksohn](https://github.com/pksohn/)
+* [@smmaurer](https://github.com/smmaurer/)
 

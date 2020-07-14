@@ -15,14 +15,14 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - requests >=2.9.1
-    - pandas >=0.16.0
+    - pandas >=0.23
     - numpy >=1.10
-    - geopandas >=0.2.1
+    - geopandas >=0.7
     - shapely >=1.5
 
 test:
@@ -44,5 +44,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - pksohn
     - smmaurer

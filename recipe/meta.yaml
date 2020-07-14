@@ -1,4 +1,4 @@
-{% set version = "0.1.5" %}
+{% set version = "0.1.6" %}
 
 package:
   name: osmnet
@@ -6,23 +6,23 @@ package:
 
 source:
   url: https://pypi.io/packages/source/o/osmnet/osmnet-{{ version }}.tar.gz
-  sha256: 2fb96a7a95e34af45d1b8c5f88705da6876143820781220b1f55adf1f242639e
+  sha256: 3cfb73317e59286797913e68ea3134205786ff1221111bbc5044b76ed8d26335
 
 build:
-  number: 3
+  number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - requests >=2.9.1
-    - pandas >=0.16.0
+    - pandas >=0.23
     - numpy >=1.10
-    - geopandas >=0.2.1
+    - geopandas >=0.7
     - shapely >=1.5
 
 test:
@@ -34,7 +34,7 @@ about:
   license: AGPL-3.0
   license_family: AGPL
   license_file: LICENSE.txt
-  summary: 'Tools for the extraction of OpenStreetMap street network data for use in Pandana accessibility analyses.'
+  summary: Tools for the extraction of OpenStreetMap street network data for use in Pandana accessibility analyses.
   description: |
     Tools for the extraction of OpenStreetMap (OSM) street network data.
     Intended to be used in tandem with Pandana and UrbanAccess libraries to
@@ -44,5 +44,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - pksohn
     - smmaurer

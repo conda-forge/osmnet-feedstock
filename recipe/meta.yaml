@@ -5,20 +5,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/o/osmnet/osmnet-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/o/osmnet/osmnet-{{ version }}.tar.gz
   sha256: 21f856ea4cc63c15fc7dc65dce7db8cd3f01c58f0b09d8cc9e860496bd0a419a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - requests >=2.9.1
     - pandas >=0.23
     - numpy >=1.10
@@ -26,6 +26,8 @@ requirements:
     - shapely >=1.8
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - osmnet
 
